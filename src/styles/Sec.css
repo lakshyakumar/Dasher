@@ -1,0 +1,30 @@
+.container {
+    width: 80%;
+    align-self: center;
+    margin: 2rem 0 2rem 0;
+}
+
+.container > .displayCards{
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 4rem;
+    padding: 2rem 1rem 1rem 0rem;
+}
+
+.container > .title{
+    color: #909090;
+    font-size: 3rem;
+    padding: 2rem;
+    position: relative;
+}
+
+.container > .title::after{
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 10%;
+    background: #d6cf00 ;
+    bottom: 15px;
+    left: 45%;
+}

@@ -1,0 +1,13 @@
+.navigation_container{
+    background-color: #303030;
+    color: #d8d8d8;
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: left;
+    box-shadow: 0rem .5rem 1rem #D8D8D8;
+}
+
+.navigation_container > logo {
+    box-sizing: inherit;
+    width:20px;
+}
