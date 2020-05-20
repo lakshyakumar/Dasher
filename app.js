@@ -5,6 +5,8 @@ var cors = require('cors')
 const router = require('./routes/repository');
 const visibility = require('./routes/visibility');
 const maintainance = require('./routes/maintainance');
+const dotenv = require("dotenv");
+dotenv.config();
 
 
 app.use(cors());

@@ -1,4 +1,4 @@
-import { faCodeBranch, faStar, faBinoculars, faUser, faFolderOpen, faFolder, faFileImport, faHistory, } from '@fortawesome/free-solid-svg-icons'
+import { faCodeBranch, faStar, faBinoculars, faEye, faUser, faFolderOpen, faFolder, faFileImport, faHistory, } from '@fortawesome/free-solid-svg-icons'
 
 export default {
     metrics: {
