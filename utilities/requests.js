@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-function get(url, callBack, configurations={}){
+function get(tag ,url, callBack, configurations={}){
         let config = {
             ...configurations,
             auth:{
@@ -9,7 +9,7 @@ function get(url, callBack, configurations={}){
             }
         }
         axios.get(url,config).then(data=>{
-            callBack(data);
+            callBack(data.data);
         })
 }
 

@@ -1,14 +1,8 @@
-import { faCodeBranch, faStar, faBinoculars, faEye, faUser, faFolderOpen, faFolder, faFileImport, faHistory, } from '@fortawesome/free-solid-svg-icons'
+import { faCodeBranch, faStar, faClone, faBinoculars, faEye, faUser, faFolderOpen, faFolder, faFileImport, faHistory, } from '@fortawesome/free-solid-svg-icons'
 
 export default {
     metrics: {
       visibility:[
-        {
-          "name": "Forked",
-          "icon": faCodeBranch,
-          "total": 23,
-          "today": 2
-        },
         {
           "name": "Starred",
           "icon": faStar,
@@ -52,6 +46,15 @@ export default {
           "icon": faHistory,
           "total": 23,
           "today": 2
+        }
+      ],
+      usage:[
+        {
+          "name": "Forked",
+          "icon": faCodeBranch,
+          "total": 23,
+          "today": 2
+
         }
       ]
     }

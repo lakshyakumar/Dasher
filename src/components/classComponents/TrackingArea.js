@@ -40,11 +40,13 @@ class TrackingArea extends React.Component{
   componentDidMount(){
     this.fetchData(this.state.metrics.visibility, "visibility");
     this.fetchData(this.state.metrics.maintenance, "maintenance");
+    this.fetchData(this.state.metrics.usage, "usage");
   }
 
   render(){
     return(
       <div className="tracker-screen">
+        <Sec cardsToShow={this.state.metrics.usage} title={"Usage Metrics"}/>
         <Sec cardsToShow={this.state.metrics.visibility} title={"Visibility Metrics"}/>
         <Sec cardsToShow={this.state.metrics.maintenance} title={"Maintenance Metrics"}/>
       </div>

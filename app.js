@@ -1,10 +1,11 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-var cors = require('cors')
+var cors = require('cors');
 const router = require('./routes/repository');
 const visibility = require('./routes/visibility');
 const maintainance = require('./routes/maintainance');
+const usage = require('./routes/usage');
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -16,7 +17,8 @@ app.get('/', function(req, res) {
   });
 app.use(router);
 app.use(visibility);
-app.use(maintainance)
+app.use(maintainance);
+app.use(usage);
 
 app.listen(9000, ()=>{
     console.log("starting a server at 9000.....")

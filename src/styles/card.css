@@ -3,6 +3,7 @@
     color: #D8D8D8;
     min-height: 100px;
     min-width: 200px;
+    max-width: 470px;
     padding: 1rem 1rem 1rem 1rem;
     background-color: #909090;
     border-radius: 0.5rem;
