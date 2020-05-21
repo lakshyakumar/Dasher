@@ -27,7 +27,7 @@ maintainanceRouter.get('/api/open_issues/', function(req, res) {
 maintainanceRouter.get('/api/closed_issues/', function(req, res) {
     console.log("Closed issues");
     let url = "https://api.github.com/repos/hyperledger-labs/blockchain-automation-framework/issues?state=closed&page=1&per_page=100";
-    requests.get(
+    requests.closedIssues(
                     "closed_isses",
                     url,
                     data => {
