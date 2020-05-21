@@ -4,8 +4,8 @@ const requests = require('../utilities/requests');
 
 usageRouter.get('/api/forked/', function(req, res) {
     console.log("forked");
-    let url = "https://api.github.com/repos/hyperledger-labs/blockchain-automation-framework/forks?page=1&per_page=100";
-    requests.get(
+    let url = "https://api.github.com/repos/hyperledger-labs/blockchain-automation-framework/forks?";
+    requests.recurrsiveGet(
                     "forked",
                     url,
                     (data)=>{

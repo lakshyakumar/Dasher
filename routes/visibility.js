@@ -4,8 +4,8 @@ const requests = require('../utilities/requests');
 
 visibilityRouter.get('/api/starred/', function(req, res) {
     console.log("starred");
-    let url = "https://api.github.com/repos/hyperledger-labs/blockchain-automation-framework/stargazers?page=1&per_page=100"
-    requests.get(
+    let url = "https://api.github.com/repos/hyperledger-labs/blockchain-automation-framework/stargazers?"
+    requests.recurrsiveGet(
                     "starred",
                     url,
                     data => {
@@ -30,8 +30,8 @@ visibilityRouter.get('/api/starred/', function(req, res) {
 
 visibilityRouter.get('/api/contributors/', function(req, res) {
     console.log("contributors");
-    let url = "https://api.github.com/repos/hyperledger-labs/blockchain-automation-framework/stats/contributors?page=1&per_page=100";
-    requests.get(
+    let url = "https://api.github.com/repos/hyperledger-labs/blockchain-automation-framework/stats/contributors?";
+    requests.recurrsiveGet(
                     "contributors",
                     url,
                     data => {
@@ -44,8 +44,8 @@ visibilityRouter.get('/api/contributors/', function(req, res) {
 
 visibilityRouter.get('/api/watchers/', function(req, res) {
     console.log("watchers");
-    let url = "https://api.github.com/repos/hyperledger-labs/blockchain-automation-framework/subscribers?page=1&per_page=100";
-    requests.get(
+    let url = "https://api.github.com/repos/hyperledger-labs/blockchain-automation-framework/subscribers?";
+    requests.recurrsiveGet(
                     "watchers",
                     url,
                     data => {

@@ -11,12 +11,12 @@ function get(tag ,url, callBack, configurations={}){
         axios.get(url,config).then(data=>{
             callBack(data.data);
         }).catch(e =>{
-            console.log(e);
+            console.log("caught an error",e);
         })
 }
 
 
-function closedIssues(tag, url, callBack, configurations={}){
+function recurrsiveGet(tag, url, callBack, configurations={}){
     let config = {
         ...configurations,
         auth:{
@@ -24,25 +24,26 @@ function closedIssues(tag, url, callBack, configurations={}){
             password: process.env.GIT_TOKEN
         }
     }
-     axiosRequest(url, 1, callBack, [])
+     recurseAxiosRequest(url, 1, callBack, [], config)
 }
 
-function axiosRequest(url, page, callback, array){
-    let tempURL = `${url}&page=${page}&per_page=100`;
-    axios.get(tempURL).then(
+function recurseAxiosRequest(url, page, callback, array, config){
+    let recurrseURL = `${url}&page=${page}&per_page=100`;
+    axios.get(recurrseURL, config).then(
       data => {
-          console.log(page);
         if(data.data.length == 100){
           array = [...array,...data.data]
-          axiosRequest(url,page+1, callback,array)
+          recurseAxiosRequest(url,page+1, callback,array, config);
         }else{
           array = [...array,...data.data]
-          callback(array)
+          callback(array);
         } 
       } 
-    )
+    ).catch(e =>{
+        console.log("caught an error",e);
+    })
   }
 
 
-exports.closedIssues = closedIssues
+exports.recurrsiveGet = recurrsiveGet;
 exports.get = get;

@@ -5,8 +5,8 @@ const requests = require('../utilities/requests');
 
 maintainanceRouter.get('/api/open_issues/', function(req, res) {
     console.log("Open issues");
-    let url = "https://api.github.com/repos/hyperledger-labs/blockchain-automation-framework/issues?state=open&page=1&per_page=100";
-    requests.get(
+    let url = "https://api.github.com/repos/hyperledger-labs/blockchain-automation-framework/issues?state=open&";
+    requests.recurrsiveGet(
                     "open_issues",
                     url,
                     data => {
@@ -26,8 +26,8 @@ maintainanceRouter.get('/api/open_issues/', function(req, res) {
 
 maintainanceRouter.get('/api/closed_issues/', function(req, res) {
     console.log("Closed issues");
-    let url = "https://api.github.com/repos/hyperledger-labs/blockchain-automation-framework/issues?state=closed&page=1&per_page=100";
-    requests.closedIssues(
+    let url = "https://api.github.com/repos/hyperledger-labs/blockchain-automation-framework/issues?state=closed&";
+    requests.recurrsiveGet(
                     "closed_isses",
                     url,
                     data => {
@@ -47,8 +47,8 @@ maintainanceRouter.get('/api/closed_issues/', function(req, res) {
 
 maintainanceRouter.get('/api/open_pr/', function(req, res) {
     console.log("Open pr");
-    let url = "https://api.github.com/repos/hyperledger-labs/blockchain-automation-framework/pulls?state=open&page=1&per_page=100";
-    requests.get(
+    let url = "https://api.github.com/repos/hyperledger-labs/blockchain-automation-framework/pulls?state=open&";
+    requests.recurrsiveGet(
                     "open_pr",
                     url,
                     data => {
@@ -68,8 +68,8 @@ maintainanceRouter.get('/api/open_pr/', function(req, res) {
 
 maintainanceRouter.get('/api/closed_pr/', function(req, res) {
     console.log("Closed PR");
-    let url = "https://api.github.com/repos/hyperledger-labs/blockchain-automation-framework/pulls?state=closed&page=1&per_page=100";
-    requests.get(
+    let url = "https://api.github.com/repos/hyperledger-labs/blockchain-automation-framework/pulls?state=closed&";
+    requests.recurrsiveGet(
                     "closed_pr",
                     url,
                     data => {
