@@ -23,8 +23,9 @@ class TrackingArea extends React.Component{
         }
         return true;
       })
-      tempElement["today"] = stateData["today"];
-      tempElement["total"] = stateData["total"];
+      // tempElement["today"] = stateData["today"];
+      // tempElement["total"] = stateData["total"];
+      tempElement = {...tempElement, ...stateData}
       prevState.metrics[arrayname] = [...newElements,tempElement]
       return (prevState)
     })

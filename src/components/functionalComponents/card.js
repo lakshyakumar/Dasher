@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 function Card( props ){
+
   return(
     <div className="card-container">
       <div className="logo">
@@ -15,12 +16,12 @@ function Card( props ){
         <div className="data-fields">
           <div className="data">
             <div className="value"><CountUp end={props.total}/></div>
-            <div className="tag">Total</div>
-          </div>
-          <div className="data">
+              <div className="tag">{props.tag_1}</div>
+           </div>
+          {props.tag_2? <div className="data">
             <div className="value"><CountUp end={props.today}/></div>
-            <div className="tag">Today</div>
-          </div>
+              <div className="tag">{props.tag_2}</div>
+          </div> : null}
         </div>
       </div>
       

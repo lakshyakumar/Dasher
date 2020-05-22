@@ -11,7 +11,7 @@ class Sec extends React.Component{
         <div className="bar"></div>
         <div className="displayCards">
         {this.props.cardsToShow.map((value,i)=>{
-          return(<Card total={value.total} today={value.today} key={i} title={value.name} icon={value.icon} />)
+          return(<Card total={value.total} today={value.today} key={i} title={value.name} tag_1={value.tag_1} tag_2={value.tag_2} icon={value.icon} />)
         })}
         </div>
       </div>
